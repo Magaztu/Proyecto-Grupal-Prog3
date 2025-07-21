@@ -40,140 +40,17 @@
     <h2 class="mb-4">Catálogo de Películas</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 
-      <!-- Barbie -->
-      <!-- <div class="col">
-        <div class="card movie-card h-100">
-          <img src="https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" class="card-img-top" alt="Barbie">
-          <div class="card-body">
-            <h5 class="movie-title">Barbie</h5>
-            <p class="card-text">Género: Comedia / Fantasía</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barbieModal">Ver más</button>
-          </div>
-        </div>
-      </div> -->
-
+      <!-- Iteraciones otrabes -->
       <?php
         include("../conexion.php");
-
-        if(empty($_POST["buscarPelis"])){
-            $buscar = "";
-            $consulta = $conexion->query("call busqueda_titulo('$buscar');");
-          }
-          else {
-            $buscar = $_POST["buscarPelis"];
-            $consulta = $conexion->query("call busqueda_titulo('$buscar');");
-          }
-          $contador = 1;
-
-          while($fila = $consulta->fetch_assoc()){
-  
-            $titulo_pelicula = $fila["title"];
-            $id = $fila["film_id"];
-            $duracion = $fila["tiempo_total"];
-            $categoria_pelicula = $fila["categoria"];
-            $descripcion = $fila["description"];
-            $rating = $fila["rating"];
-            $contador++; //Paara identificar los modals
-            // $consulta->free(); // Limpia la conexión para que pueda llamar de nuevo
-
-
-            // $actores = "";
-            // $consulta_2 = $conexion->query("call busqueda_actores('$titulo_pelicula')");
-            // while($row = $consulta_2->fetch_assoc()){
-            //   $actores = $actores . $row["actores"] . " | ";
-            //   $consulta_2->free();
-            // }
-            $datos = "https://picsum.photos/200/300?grayscale&random=" . rand(1, 100);
-            if(@getimagesize($datos)){ //@ Evita que salgan mensajes de warning, cualquier respuesta se toma como si la imagen cargóe xitosamente 
-              $foto = $datos;
-            }
-            else{
-              $foto = "../../recursos-e-imágenes/defaultpfp.png";
-            }
-            echo '
-            <div class="col">
-              <div class="card movie-card h-100">
-                <img src="'. $foto . '" class="card-img-top" alt="Barbie">
-                <div class="card-body">
-                  <h5 class="movie-title">' . $titulo_pelicula . '</h5>
-                  <p class="card-text">Género: ' . $categoria_pelicula . '</p>
-                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#' . $contador .'Modal">Ver más</button>
-                </div>
-              </div>
-            </div>
-            ';
-
-            echo '
-            <div class="modal fade" id="'. $contador .'Modal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">' . $titulo_pelicula . '</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <img src="' . $foto . '" class="img-fluid modal-poster" alt="Barbie">
-                    </div>
-                    <div class="col-md-8">
-                      <p><strong>Género:</strong> '. $categoria_pelicula .'</p>
-                      <p><strong>Sinopsis:</strong> '. $descripcion .'</p>
-                      <p><strong>Duración:</strong> '. $duracion .'</p>
-                      <p><strong>Rating:</strong> '. $rating .'</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <form action="./renta.php" method="get">
-                    <input type="hidden" name="peli_id" id="peli_id" value="'. $id .'">
-                    <button type="submit" class="btn btn-success">Rentar</button>
-                  </form>
-                </div>
-                </div>
-              </div>
-            </div>
-            ';
-
-          }
+        include("../Controladores/catalogoControlador.php");
+        $controladito = new catalogoControlado($conexion);
+        echo $controladito->catalogo();
 
       ?>
 
     </div>
   </div>
-  <!-- Modales -->
-  <!-- Modal Barbie -->
-  <!-- <div class="modal fade" id="barbieModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Barbie (2023)</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-4">
-              <img src="https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" class="img-fluid modal-poster" alt="Barbie">
-            </div>
-            <div class="col-md-8">
-              <p><strong>Género:</strong> Comedia, Fantasía</p>
-              <p><strong>Director:</strong> Greta Gerwig</p>
-              <p><strong>Reparto:</strong> Margot Robbie, Ryan Gosling, America Ferrera</p>
-              <p><strong>Sinopsis:</strong> Barbie vive en Barbieland donde todo es perfecto, hasta que un día comienza a cuestionar su existencia y parte al mundo real en un viaje de autodescubrimiento.</p>
-              <p><strong>Duración:</strong> 1h 54m</p>
-              <p><strong>Calificación:</strong> ★★★★☆</p>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Rentar</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

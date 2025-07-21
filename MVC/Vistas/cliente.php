@@ -64,17 +64,6 @@
     <div class="container-fluid">
       <div class="row" id="clientesList">
         <h2 class="mb-4">Registro de Clientes</h2>
-        <!-- Cliente 1 -->
-        <!-- <div class="col-md-4 mb-4 client-card" data-name="ana gomez">
-          <div class="card text-center">
-            <div class="card-body">
-              <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Ana" class="mb-3">
-              <h5 class="card-title">Ana Gómez</h5>
-              <p class="card-text">Cliente frecuente desde 2021</p>
-              <a href="#" class="btn btn-success">Ver perfil</a>
-            </div>
-          </div>
-        </div> -->
         
         <!-- Iteraciones -->
         <?php
@@ -86,26 +75,6 @@
   
       </div>
     </div>
-  <!-- </div> -->
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- <script>
-    const searchInput = document.getElementById('searchInput');
-    const clientCards = document.querySelectorAll('.client-card');
-
-    searchInput.addEventListener('input', () => {
-      const searchValue = searchInput.value.toLowerCase();
-
-      clientCards.forEach(card => {
-        const name = card.getAttribute('data-name');
-        if (name.includes(searchValue)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  </script> -->
 </body>
 </html>
