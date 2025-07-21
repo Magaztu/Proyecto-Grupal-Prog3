@@ -48,34 +48,60 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card p-4 bg-white">
-          <form id="rentaForm">
+          <form id="rentaForm" method="POST">
             <div class="mb-3">
               <label for="cliente" class="form-label">Cliente</label>
-              <input type="text" class="form-control" id="cliente" placeholder="Nombre del cliente" required>
+              <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Nombre del cliente" required>
             </div>
             <div class="mb-3">
               <label for="pelicula" class="form-label">Película</label>
-              <select class="form-select" id="pelicula" required>
-                <option value="" selected disabled>Selecciona una película</option>
-                <option>Spiderman 2</option>
-                <option>El chavo del 8</option>
-                <option>Pin pon</option>
-              </select>
+              <?php
+              if(isset($_GET["peli_id"])){
+                $peli_id = $_GET["peli_id"];
+              }else{
+                $peli_id = "";
+              }
+              echo '<input type="text" class="form-control" id="pelicula" name="pelicula" placeholder="ID de la película" value="'. $peli_id .'" required>';
+
+              ?>
+              </input>
             </div>
             <div class="mb-3">
               <label for="fechaRenta" class="form-label">Fecha de Renta</label>
-              <input type="date" class="form-control" id="fechaRenta" required>
+              <input type="date" class="form-control" id="fechaRenta" name="fechaRenta" required>
             </div>
             <div class="mb-3">
               <label for="fechaDevolucion" class="form-label">Fecha de devolucion</label>
-              <input type="date" class="form-control" id="fechaDevolucion" required>
+              <input type="date" class="form-control" id="fechaDevolucion" name="fechaDevolucion" required>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="devuelta">
+              <input type="checkbox" class="form-check-input" id="devuelta" name="devuelta">
               <label class="form-check-label" for="devuelta">Película devuelta</label>
             </div>
             <button type="submit" class="btn btn-primary w-100">Registrar Renta</button>
           </form>
+
+            <?php
+            if(isset($_POST["cliente"]) && isset($_POST["pelicula"]) && isset($_POST["fechaRenta"]) && isset($_POST["fechaDevolucion"])){
+              $nombre = $_POST["cliente"];
+              $peli = $_POST["pelicula"];
+              $fechaida = $_POST["fechaRenta"];
+              $fecharegreso = $_POST["fechaDevolucion"];
+
+              include("../conexion.php");
+              $consulta = $conexion->query('SELECT * FROM customer WHERE first_name LIKE "' . $nombre . '%" LIMIT 1');
+              if ($consulta->num_rows === 0) {
+                echo "Cliente no encontrado, intente de nuevo";
+              } else {
+                echo "Cliente encontrado.";
+                $fila = $consulta->fetch_assoc();
+                $customer_id = $fila["customer_id"];
+                $consulta->free();
+                $consulta = $conexion->query("INSERT INTO RENTAL(rental_date, inventory_id, customer_id, return_date, staff_id) VALUES('$fechaida',2,'$customer_id','$fecharegreso',1)");
+              }
+            }
+            ?>
+
         </div>
       </div>
     </div>
@@ -101,7 +127,7 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+  <!-- <script>
     const form = document.getElementById("rentaForm");
     const modal = new bootstrap.Modal(document.getElementById("resultadoModal"));
 
@@ -121,6 +147,6 @@
       document.getElementById("res-devuelta").textContent = devuelta;
       modal.show();
     });
-  </script>
+  </script> -->
 </body>
 </html>
