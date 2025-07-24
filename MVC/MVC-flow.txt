@@ -1,0 +1,11 @@
+MODELS:
+Will only contain db access and data-related logic.
+
+CONTROLLERS:
+Will receive petitions from the user (pages) and will redirect them to the MODELS or VIEWS.
+
+VIEWS:
+Will return a html variable that stores tags.
+
+PAGES:
+Is just the html / php that'll interact with the user.
