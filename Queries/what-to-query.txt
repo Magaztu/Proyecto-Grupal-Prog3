@@ -1,0 +1,4 @@
+Around 5 tables are on the waiting line to be implemented with their UI.
+I'll list them here:
+
+Also, gotta add CRUD operations to existing ones.
