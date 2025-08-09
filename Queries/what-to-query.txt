@@ -16,3 +16,9 @@ Considering the following:
 - Film_categoría (Trans) 👎 
 - Film_text (Trans) 👎 
 - Inventario (Trans) ➡️
+
+- Idioma ➡️ 
+- Pago (Trans) 👎 
+- [Alquiler / Renta]
+- Staff 👍 
+- Tienda 👍
