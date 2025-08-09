@@ -9,3 +9,10 @@ Considering the following:
 - Dirección (Trans) 👎 
 - Ciudad 👎 
 - País 👎
+
+- [Cliente]
+- [Film]
+- Film_actor (Trans) 👎 
+- Film_categoría (Trans) 👎 
+- Film_text (Trans) 👎 
+- Inventario (Trans) ➡️
