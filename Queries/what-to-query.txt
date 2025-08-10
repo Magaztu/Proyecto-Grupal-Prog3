@@ -10,12 +10,12 @@ Considering the following:
 - Ciudad 👎 - No se editará nunca
 - País 👎 - No se editará nunca
 
-- [Cliente]
-- [Film]
+- [Cliente] - HECHO
+- [Film] - HECHO
 - Film_actor (Trans) 👎 
 - Film_categoría (Trans) 👎 
 - Film_text (Trans) 👎 
-- Inventario (Trans) ➡️
+- Inventario (Trans) ➡️ - Podría tener un CRUD para añadir o quitar pelis del inventario, pero es necesario? // no estamos manejando dos TIENDAS //
 
 - Idioma ➡️ 
 - Pago (Trans) 👎 
