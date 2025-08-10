@@ -5,7 +5,7 @@ Also, gotta add CRUD operations to existing ones.
 
 Considering the following:
 
-- Actor 👍 
+- Actor 👍 - Añadir nuevos actroes / gestionarlos
 - Dirección (Trans) 👎 
 - Ciudad 👎 - No se editará nunca
 - País 👎 - No se editará nunca
@@ -17,8 +17,8 @@ Considering the following:
 - Film_text (Trans) 👎 
 - Inventario (Trans) ➡️ - Podría tener un CRUD para añadir o quitar pelis del inventario, pero es necesario? // no estamos manejando dos TIENDAS //
 
-- Idioma ➡️ 
+- Idioma ➡️ - Podrían añadirse nuevos idiomas a una película, pero en general cae en la categoría de NUNCA EDITAR como ciudad y país
 - Pago (Trans) 👎 
-- [Alquiler / Renta]
-- Staff 👍 
-- Tienda 👍
+- [Alquiler / Renta] - HECHO
+- Staff 👍 - Añadir personal
+- Tienda 👍 - Gestionar tiendas
