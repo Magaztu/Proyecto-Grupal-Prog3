@@ -7,8 +7,8 @@ Considering the following:
 
 - Actor 👍 
 - Dirección (Trans) 👎 
-- Ciudad 👎 
-- País 👎
+- Ciudad 👎 - No se editará nunca
+- País 👎 - No se editará nunca
 
 - [Cliente]
 - [Film]
