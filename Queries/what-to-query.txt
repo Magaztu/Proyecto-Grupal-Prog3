@@ -22,3 +22,7 @@ Considering the following:
 - [Alquiler / Renta] - HECHO
 - Staff 👍 - Añadir personal
 - Tienda 👍 - Gestionar tiendas
+
+TOTAL NUEVO: 4 vistas
+
+TOTAL PENDIENTE: 7 vistas
