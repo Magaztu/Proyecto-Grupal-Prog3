@@ -6,6 +6,7 @@ Will receive petitions from the user (pages) and will redirect them to the MODEL
 
 VIEWS:
 Will return a html variable that stores tags.
+-- Supposedly, cuz Pages and Views are actually swapped nhehehjehewj
 
 PAGES:
 Is just the html / php that'll interact with the user.
