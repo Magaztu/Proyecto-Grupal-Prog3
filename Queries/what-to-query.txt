@@ -15,7 +15,7 @@ Considering the following:
 - Film_actor (Trans) 👎 
 - Film_categoría (Trans) 👎 
 - Film_text (Trans) 👎 
-- Inventario (Trans) ➡️ - Podría tener un CRUD para añadir o quitar pelis del inventario, pero es necesario? // no estamos manejando dos TIENDAS //
+- Inventario (Trans) ➡️ - Podría tener un CRUD para añadir o quitar pelis del inventario, pero es necesario? // no estamos manejando dos TIENDAS // [PUEDE QUE YA NO, SE CONVERTIRÁ EN ACTORES O STAFF]
 
 - Idioma ➡️ - Podrían añadirse nuevos idiomas a una película, pero en general cae en la categoría de NUNCA EDITAR como ciudad y país
 - Pago (Trans) 👎 
