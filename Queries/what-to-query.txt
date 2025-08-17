@@ -5,7 +5,7 @@ Also, gotta add CRUD operations to existing ones.
 
 Considering the following:
 
-- Actor 👍 - Añadir nuevos actroes / gestionarlos
+- Actor 👍 - Añadir nuevos actroes / gestionarlos --------------------------
 - Dirección (Trans) 👎 
 - Ciudad 👎 - No se editará nunca
 - País 👎 - No se editará nunca
