@@ -10,8 +10,8 @@ Considering the following:
 - Ciudad 👎 - No se editará nunca
 - País 👎 - No se editará nunca
 
-- [Cliente] - HECHO
-- [Film] - HECHO
+- [Cliente] - HECHO +++++++++++
+- [Film] - HECHO    +++++++++++
 - Film_actor (Trans) 👎 
 - Film_categoría (Trans) 👎 
 - Film_text (Trans) 👎 
@@ -19,9 +19,9 @@ Considering the following:
 
 - Idioma ➡️ - Podrían añadirse nuevos idiomas a una película, pero en general cae en la categoría de NUNCA EDITAR como ciudad y país
 - Pago (Trans) 👎 
-- [Alquiler / Renta] - HECHO
-- Staff 👍 - Añadir personal
-- Tienda 👍 - Gestionar tiendas
+- [Alquiler / Renta] - HECHO          ++++++++++
+- Staff 👍 - Añadir personal          ------------
+- Tienda 👍 - Gestionar tiendas       ??????????
 
 TOTAL NUEVO: 4 vistas
 

@@ -22,13 +22,13 @@
           <a class="nav-link disabled" aria-disabled="true">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./MVC/Vistas/cliente.php">Clientes</a>
+          <a class="nav-link active" aria-current="page" href="./MVC/Pages/cliente.php">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./MVC/Vistas/catalogo.php">Catálogo</a>
+          <a class="nav-link active" aria-current="page" href="./MVC/Pages/catalogo.php">Catálogo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./MVC/Vistas/renta.php">Renta</a>
+          <a class="nav-link active" aria-current="page" href="./MVC/Pages/renta.php">Renta</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
