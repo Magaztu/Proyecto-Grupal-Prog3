@@ -8,31 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .navbar-brand {
-      font-family: 'Dancing Script', cursive;
-      font-size: xx-large;
-    }
-    .actor-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    .actor-card {
-      transition: transform 0.2s ease;
-    }
-    .actor-card:hover {
-      transform: scale(1.02);
-    }
-  </style>
+  <link rel="stylesheet" href="../../recursos-e-imágenes/tema-oscuro.css">
 </head>
-<body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+<body>
+  <nav class="navbar navbar-expand-lg mb-4">
     <div class="container-fluid">
       <a class="navbar-brand" href="../../index.php">Shakila!</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -44,7 +24,7 @@
             <a class="nav-link" href="../../index.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./cliente.php">Clientes</a>
+            <a class="nav-link" href="./cliente.php">Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./catalogo.php">Catálogo</a>
@@ -53,16 +33,16 @@
             <a class="nav-link" href="./renta.php">Renta</a>
           </li>
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gestión
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="./tienda.php">Seleccionar Tienda </a></li>
-            <li><hr class="dropdown-divider disabled"></li>
-            <li><a class="dropdown-item" href="./staff.php">Staff</a></li>
-            <li><a class="dropdown-item disabled" href="#">Actores</a></li>
-          </ul>
-        </li>
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Gestión
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./tienda.php">Seleccionar Tienda</a></li>
+              <li><hr class="dropdown-divider disabled"></li>
+              <li><a class="dropdown-item" href="./staff.php">Staff</a></li>
+              <li><a class="dropdown-item disabled" href="#">Actores</a></li>
+            </ul>
+          </li>
         </ul>
         <form class="d-flex" role="search" method="POST">
           <input id="buscarActor" name="buscarActor" class="form-control me-2" type="search" placeholder="Buscar actores" aria-label="Buscar"/>
@@ -99,7 +79,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 
