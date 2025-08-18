@@ -42,10 +42,11 @@ body {
     .form-control {
       background-color: #333;
       border: 1px solid #555;
-      color: #fff !important;
+      color: #fff;
     }
 
-    .form-control::placeholder {
+    /* El color que se escribe y el del placeholder no son el mismo, se debe usar :: */
+    .form-control::placeholder {  
         color: #bbb !important;
     }
 
@@ -64,6 +65,13 @@ body {
       height: 100px;
       object-fit: cover;
       border-radius: 50%;
+    }
+
+    .staff-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 30%;
     }
 
     .actor-card {

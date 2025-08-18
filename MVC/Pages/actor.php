@@ -80,6 +80,10 @@
         </div>
       </div>
 
+      <?php
+        $lol = "";
+      ?>
+
     </div>
   </div>
 
