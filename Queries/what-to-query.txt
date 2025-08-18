@@ -5,13 +5,17 @@ Also, gotta add CRUD operations to existing ones.
 
 Considering the following:
 
-- Actor 👍 - Añadir nuevos actroes / gestionarlos --------------------------
+- Actor 👍 - Añadir nuevos actroes / gestionarlos -------------------------- *PAGINA, CRUD
+
+
 - Dirección (Trans) 👎 
 - Ciudad 👎 - No se editará nunca
 - País 👎 - No se editará nunca
 
-- [Cliente] - HECHO +++++++++++
-- [Film] - HECHO    +++++++++++
+- [Cliente] - HECHO +++++++++++ *CRUD
+- [Film] - HECHO    +++++++++++ *CRUD
+
+
 - Film_actor (Trans) 👎 
 - Film_categoría (Trans) 👎 
 - Film_text (Trans) 👎 
@@ -19,10 +23,12 @@ Considering the following:
 
 - Idioma ➡️ - Podrían añadirse nuevos idiomas a una película, pero en general cae en la categoría de NUNCA EDITAR como ciudad y país
 - Pago (Trans) 👎 
-- [Alquiler / Renta] - HECHO          ++++++++++
-- Staff 👍 - Añadir personal          ------------
-- Tienda 👍 - Gestionar tiendas       ??????????
 
-TOTAL NUEVO: 4 vistas
 
-TOTAL PENDIENTE: 7 vistas
+- [Alquiler / Renta] - HECHO          ++++++++++ *SOLUCIONAR BUG DE RENTA
+- Staff 👍 - Añadir personal          ------------ *PAGINA, CRUD
+- Tienda 👍 - Gestionar tiendas       ?????????? *PAGINA, CRUD(?)
+
+TOTAL NUEVO: 3 vistas
+
+TOTAL PENDIENTE: 6 vistas

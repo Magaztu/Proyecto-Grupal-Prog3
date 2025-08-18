@@ -30,6 +30,17 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./MVC/Pages/renta.php">Renta</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Administración
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./MVC/Pages/tienda.php">Seleccionar Tienda </a></li>
+            <li><hr class="dropdown-divider disabled"></li>
+            <li><a class="dropdown-item" href="#">Staff</a></li>
+            <li><a class="dropdown-item" href="#">Actores</a></li>
+          </ul>
+        </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li> -->
