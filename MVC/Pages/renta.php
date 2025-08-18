@@ -39,6 +39,17 @@
             <li class="nav-item"><a class="nav-link" href="./cliente.php">Clientes</a></li>
             <li class="nav-item"><a class="nav-link" href="./catalogo.php">Catálogo</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Renta</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gestión
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./tienda.php">Seleccionar Tienda </a></li>
+                <li><hr class="dropdown-divider disabled"></li>
+                <li><a class="dropdown-item" href="./staff.php">Staff</a></li>
+                <li><a class="dropdown-item" href="./actor.php">Actores</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>

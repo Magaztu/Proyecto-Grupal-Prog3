@@ -27,6 +27,17 @@
           <li class="nav-item"><a class="nav-link" href="./cliente.php">Clientes</a></li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="./renta.php">Renta</a></li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gestión
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./tienda.php">Seleccionar Tienda </a></li>
+            <li><hr class="dropdown-divider disabled"></li>
+            <li><a class="dropdown-item" href="./staff.php">Staff</a></li>
+            <li><a class="dropdown-item" href="./actor.php">Actores</a></li>
+          </ul>
+        </li>
         </ul>
         <form class="d-flex" role="search" method="post" action="">
           <input name="buscarPelis" id="buscarPelis" class="form-control me-2" type="search" placeholder="Buscar películas" aria-label="Search">

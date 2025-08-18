@@ -29,6 +29,6 @@ Considering the following:
 - Staff 👍 - Añadir personal          ------------ *PAGINA, CRUD
 - Tienda 👍 - Gestionar tiendas       ?????????? *PAGINA, CRUD(?)
 
-TOTAL NUEVO: 3 vistas
+TOTAL NUEVO: 4 vistas
 
-TOTAL PENDIENTE: 6 vistas
+TOTAL PENDIENTE: 7 vistas
