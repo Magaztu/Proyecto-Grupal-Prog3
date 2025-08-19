@@ -23,20 +23,30 @@
             while($fila = $resultado->fetch_assoc()){
     
                 $titulo_pelicula = $fila["title"];
-                $id = $fila["film_id"];
+                $id = $fila["inventory_id"];
                 $duracion = $fila["tiempo_total"];
                 $categoria_pelicula = $fila["categoria"];
                 $descripcion = $fila["description"];
                 $rating = $fila["rating"];
-                $contador++; //Paara identificar los modals
+                $alquilado = $fila["alquilado"];
 
-                $datos = "https://picsum.photos/200/300?grayscale&random=" . rand(1, 100);
-                if(@getimagesize($datos)){ //@ Evita que salgan mensajes de warning, cualquier respuesta se toma como si la imagen cargóe xitosamente 
-                $foto = $datos;
+                if ($alquilado == "0"){
+                    $mensajito = "No alquilado, disponible.";
+                    $mensajito_2 = "";
                 }
                 else{
-                $foto = "../../recursos-e-imágenes/defaultpfp.png";
+                    $mensajito = "Alquilado, no disponible.";
+                    $mensajito_2 = "ALQUILADO";
                 }
+                $contador++; //Paara identificar los modals
+
+                // $datos = "https://picsum.photos/200/300?grayscale&random=" . rand(1, 100);
+                // if(@getimagesize($datos)){ //@ Evita que salgan mensajes de warning, cualquier respuesta se toma como si la imagen cargóe xitosamente 
+                // $foto = $datos;
+                // }
+                // else{
+                $foto = "../../recursos-e-imágenes/defaultpfp.png";
+                // }
                 $cartel = '
                 <div class="col">
                 <div class="card movie-card h-100">
@@ -44,6 +54,7 @@
                     <div class="card-body">
                     <h5 class="movie-title">' . $titulo_pelicula . '</h5>
                     <p class="card-text">Género: ' . $categoria_pelicula . '</p>
+                    <p class="card-text">' . $mensajito_2 . '</p>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#' . $contador .'Modal">Ver más</button>
                     </div>
                 </div>
@@ -70,6 +81,7 @@
                         <p><strong>Sinopsis:</strong> '. $descripcion .'</p>
                         <p><strong>Duración:</strong> '. $duracion .'</p>
                         <p><strong>Rating:</strong> '. $rating .'</p>
+                        <p><strong>Estado de Alquiler:</strong> '. $mensajito .'</p>
                         </div>
                     </div>
                     </div>

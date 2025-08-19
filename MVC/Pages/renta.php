@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shakila - Rentas y Lentas</title>
+  <title>Shakila - Rentas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   <style>
@@ -39,17 +39,6 @@
             <li class="nav-item"><a class="nav-link" href="./cliente.php">Clientes</a></li>
             <li class="nav-item"><a class="nav-link" href="./catalogo.php">Catálogo</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Renta</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Gestión
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./tienda.php">Seleccionar Tienda </a></li>
-                <li><hr class="dropdown-divider disabled"></li>
-                <li><a class="dropdown-item" href="./staff.php">Staff</a></li>
-                <li><a class="dropdown-item" href="./actor.php">Actores</a></li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>
@@ -87,17 +76,27 @@
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="devuelta" name="devuelta">
-              <label class="form-check-label" for="devuelta">Película devuelta</label>
+              <label class="form-check-label" for="devuelta">Estoy Alquilando </label>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Registrar Renta</button>
+            <button type="submit" class="btn btn-primary w-100" onclick="pete()">Registrar Renta</button>
+            <!-- <br>
+            <br>
+            <input type="button" id="facturin" name="facturin" class="btn btn-warning w-100" value="Ver Factura" onclick="pete()"> -->
           </form>
 
             <?php
-            if(isset($_POST["cliente"]) && isset($_POST["pelicula"]) && isset($_POST["fechaRenta"]) && isset($_POST["fechaDevolucion"])){
+            if(isset($_POST["cliente"]) && isset($_POST["pelicula"]) && isset($_POST["fechaRenta"]) && isset($_POST["fechaDevolucion"]) && isset($_POST["devuelta"])){
               $nombre = $_POST["cliente"];
               $peli = $_POST["pelicula"];
               $fechaida = $_POST["fechaRenta"];
               $fecharegreso = $_POST["fechaDevolucion"];
+              $alquilado = $_POST["devuelta"];
+              if($alquilado = "on"){
+                $alquilado = 1;
+              }
+              else{
+                $alquilado = 0;
+              }
 
               include("../conexion.php");
               $consulta = $conexion->query('SELECT * FROM customer WHERE first_name LIKE "' . $nombre . '%" LIMIT 1');
@@ -108,7 +107,7 @@
                 $fila = $consulta->fetch_assoc();
                 $customer_id = $fila["customer_id"];
                 $consulta->free();
-                $consulta = $conexion->query("INSERT INTO RENTAL(rental_date, inventory_id, customer_id, return_date, staff_id) VALUES('$fechaida',2,'$customer_id','$fecharegreso',1)");
+                $consulta = $conexion->query("INSERT INTO RENTAL(rental_date, inventory_id, customer_id, return_date, staff_id, alquilado) VALUES('$fechaida',$peli,'$customer_id','$fecharegreso',1,'$alquilado')");
               }
             }
             ?>
@@ -138,26 +137,24 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- <script>
+  <script>
     const form = document.getElementById("rentaForm");
     const modal = new bootstrap.Modal(document.getElementById("resultadoModal"));
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault(); //Bro no se si desees mantener pero, lo puse por que investigando e investigando me di cuenta que evita que la pagina se recargue al aplastatar enviar
-
-      const cliente = document.getElementById("cliente").value;
-      const pelicula = document.getElementById("pelicula").value;
-      const fechaRenta = document.getElementById("fechaRenta").value;
-      const fechaDevolucion = document.getElementById("fechaDevolucion").value;
-      const devuelta = document.getElementById("devuelta").checked ? "Sí" : "No";
-
-      document.getElementById("res-cliente").textContent = cliente;
-      document.getElementById("res-pelicula").textContent = pelicula;
-      document.getElementById("res-fechaRenta").textContent = fechaRenta;
-      document.getElementById("res-fechaDevolucion").textContent = fechaDevolucion;
-      document.getElementById("res-devuelta").textContent = devuelta;
-      modal.show();
-    });
-  </script> -->
+     function pete(){
+       const cliente = document.getElementById("cliente").value;
+       const pelicula = document.getElementById("pelicula").value;
+       const fechaRenta = document.getElementById("fechaRenta").value;
+       const fechaDevolucion = document.getElementById("fechaDevolucion").value;
+       const devuelta = document.getElementById("devuelta").checked ? "Sí" : "No";
+ 
+       document.getElementById("res-cliente").textContent = cliente;
+       document.getElementById("res-pelicula").textContent = pelicula;
+       document.getElementById("res-fechaRenta").textContent = fechaRenta;
+       document.getElementById("res-fechaDevolucion").textContent = fechaDevolucion;
+       document.getElementById("res-devuelta").textContent = devuelta;
+       modal.show();
+     };
+  </script>
 </body>
 </html>
