@@ -103,10 +103,25 @@ h2 {
   overflow: hidden;
   white-space: nowrap;
   transition: height 0.3s ease;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .slide-btn:hover {
   height: 30px;
   padding: 0.25rem 0.5rem;
+}
+
+.slide-btn-hor {
+  font-size: small;
+  margin-top: 10px;
+  width: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+  padding: 4px 3px;
+}
+
+.slide-btn-hor:hover {
+  width: 100px;
+  padding: 4px 4px 4px 3px;
 }
