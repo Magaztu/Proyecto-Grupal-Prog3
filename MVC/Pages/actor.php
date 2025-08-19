@@ -72,6 +72,10 @@
       <div class="col-md-6 actor-card">
         <div class="card text-center">
           <div class="card-body">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+              <button class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
+              <button class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Eliminar</button>
+            </div>
             <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Actor 2" class="mb-3">
             <h5 class="card-title">Lucía Ramírez</h5>
             <p class="card-text">Especialista en comedia</p>
