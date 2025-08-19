@@ -73,8 +73,9 @@
         <div class="card text-center">
           <div class="card-body">
             <div class="d-grid gap-2 d-md-flex justify-content-md-between">
-              <button class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
-              <button class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Eliminar</button>
+              <!-- Código prestado de los otros compañeros para activar un modal -->
+              <button class="btn btn-primary slide-btn" data-bs-toggle="modal" data-bs-target="#Actualizar" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
+              <button class="btn btn-danger slide-btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Eliminar</button>
             </div>
             <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Actor 2" class="mb-3">
             <h5 class="card-title">Lucía Ramírez</h5>
@@ -88,6 +89,32 @@
         $lol = "";
       ?>
 
+      <div class="modal fade" id="Actualizar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Actualizar Actor</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+              <div class="modal-body">
+                <p>Llena la información del Actor a continuación</p>
+                <div class="mb-3">
+                  <label for="nombre_a" class="form-label">Nombre:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="nombre_a" name="nombre_a">
+                </div>
+                <div class="mb-3">
+                  <label for="apellido_a" class="form-label">Apellido:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="apellido_a" name="apellido_a">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Actualizar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
