@@ -112,6 +112,54 @@ call filtrado_cliente('P');
 
 drop procedure filtrado_cliente;
 
+-------------------------------------------------------------------------
+SELECT * FROM sakila.staff;
+
+DESCRIBE STAFF;
+INSERT INTO staff(first_name, last_name, username, password, email, address_id, store_id) VALUES('Lui','gi','Lu','Luigi','lui@gi.ma',9,1);
+UPDATE STAFF SET first_name = "Gustavo", last_name = "Perroni", username = "Guspe", password = "123", email = "hola@peru.pe" WHERE staff_id = 7;
+DELETE FROM STAFF WHERE staff_id =5;
+
+delimiter $$
+create procedure mostrar_staff()
+begin
+create view staff_vw as select concat(first_name,' ',last_name) as nombres_staff, email, staff_id from staff;
+
+select * from staff_vw LIMIT 24;
+
+drop view staff_vw;
+end $$
+delimiter ;
+
+call mostrar_staff();
+
+drop procedure mostrar_staff;
+
+
+-- SEGUNDO SP
+
+
+select concat (first_name,' ', last_name) as nombres_clientes, email from customer
+where first_name like 'A%';
+
+delimiter $$
+create procedure filtrado_staff(in inicial varchar(50))
+begin
+create view filtrado_vw as select first_name, last_name, email, staff_id from staff;
+
+
+select concat(first_name, ' ',last_name) as nombres_staff, email, staff_id from filtrado_vw
+where first_name like concat(inicial, '%') LIMIT 24;
+
+
+drop view filtrado_vw;
+end $$
+delimiter ;
+
+
+call filtrado_staff('L');
+
+drop procedure filtrado_staff;
 
 
 -- No necesario para insert, delete o update
