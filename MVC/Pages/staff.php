@@ -117,7 +117,7 @@
                   <input type="password" style="background-color:#FFFFFF; color:black" class="form-control" id="contra_u" name="contra_u">
                 </div>
                 <div class="mb-3">
-                  <label for="correo_u" class="form-label">Contraseña:</label>
+                  <label for="correo_u" class="form-label">Correo Electrónico:</label>
                   <input type="email" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_u" name="correo_u">
                 </div>
               </div>
@@ -155,7 +155,7 @@
                   <input type="password" style="background-color:#FFFFFF; color:black" class="form-control" id="contra_a" name="contra_a">
                 </div>
                 <div class="mb-3">
-                  <label for="correo_a" class="form-label">Contraseña:</label>
+                  <label for="correo_a" class="form-label">Correo Electrónico:</label>
                   <input type="email" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_a" name="correo_a">
                 </div>
               </div>

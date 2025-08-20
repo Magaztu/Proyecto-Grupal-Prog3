@@ -56,10 +56,31 @@
                         <img src=" ' . $foto . ' " alt="Staff 2" class="mb-3">
                         <h5 class="card-title">' . $nombre_staff . '</h5>
                         <p class="card-text">Miembro #' . $id_staff . ' del equipo</p>
-                        <button type="button" class="btn btn-warning liveToastBtn">Contactar</button>
+                        <button type="button" class="btn btn-warning" id="btnToast' . $id_staff . '">Email</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1055;">
+                    <div id="toast' . $id_staff . '" class="toast align-items-center text-bg-info border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+                    <div class="d-flex">
+                        <div class="toast-body d-flex align-items-center gap-2">
+                        <i class="bi bi-envelope-fill fs-5"></i>
+                        <span>' . $correo . '</span>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
                     </div>
                     </div>
                 </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                    const btn = document.getElementById("btnToast' . $id_staff . '");
+                    const toastEl = document.getElementById("toast' . $id_staff . '");
+                    const toast = new bootstrap.Toast(toastEl);
+                    btn.addEventListener("click", () => toast.show());
+                    });
+                </script>
             
             ';
             $html = $html . $concatenar;
@@ -68,4 +89,6 @@
         return $html;
         }
     }
+    //No pensaba añadir un toast para cada staff, pero hice lo mismo con los modals de catalogo asi que
+    //si hablamos de performance, ambos son bodrio jijiiji
 ?>
