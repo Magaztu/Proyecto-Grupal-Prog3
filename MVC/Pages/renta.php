@@ -1,3 +1,4 @@
+<?php require_once("../Controladores/loginControlador.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

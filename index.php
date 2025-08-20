@@ -59,6 +59,7 @@
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
+      <a href="./MVC/Vistas/loginVista.php" class="btn btn-outline-danger">Cerrar Sesión</a>
       <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Buscar películas" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Buscar</button>

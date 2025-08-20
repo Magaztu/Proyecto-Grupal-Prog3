@@ -162,6 +162,35 @@ call filtrado_staff('L');
 drop procedure filtrado_staff;
 
 
+--------------------------
+
+SELECT * FROM staff WHERE username = "Guspe" && password = 123;
+
+delimiter $$
+create procedure validacion_staff(IN usuario VARCHAR(50), IN contra VARCHAR(50))
+begin
+	DECLARE validado BOOL;
+	DECLARE num INT;
+	SELECT COUNT(*) INTO num FROM staff WHERE username = usuario AND password = contra;
+    
+    IF num > 0 THEN
+		SET validado = TRUE;
+	ELSE
+		SET validado = FALSE;
+	END IF;
+    
+    SELECT validado;
+end $$
+delimiter ;
+
+call validacion_staff("Guspe","123");
+
+drop procedure validacion_staff;
+
+
+
+
+
 -- No necesario para insert, delete o update
 -- AÑADIR UN TRIGGER PARA BORRAR EL ALQUILER ANTERIOR
 -- O IMPLEMENTAR ALQUILADO EN INVENTARIO Y USAR UN TRIGGER PARA ACTIVAR O DESACTIVAR CADA QUE SE DEVUELVE UNA PELICULA
