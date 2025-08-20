@@ -1,4 +1,5 @@
-<?php require_once("../Controladores/loginControlador.php"); ?>
+<?php require_once("../Controladores/loginControlador.php"); 
+include("../Modelos/tiendaModelo.php");?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
