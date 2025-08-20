@@ -75,11 +75,14 @@
       <div class="col-md-6 actor-card">
         <div class="card text-center">
           <div class="card-body">
+            <form action="" method="post">
             <div class="d-grid gap-2 d-md-flex justify-content-md-between">
               <!-- Código prestado de los otros compañeros para activar un modal -->
-              <button class="btn btn-primary slide-btn" data-bs-toggle="modal" data-bs-target="#Actualizar" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
-              <button class="btn btn-danger slide-btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="submit">Eliminar</button>
-            </div>
+                <button class="btn btn-primary slide-btn" data-actorid="ACTOR_ID" data-bs-toggle="modal" data-bs-target="#Actualizar" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
+                <input type="hidden" name="delete_id" value="ACTOR_ID">
+                <button class="btn btn-danger slide-btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="submit">Eliminar</button>
+              </div>
+            </form>
             <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Actor 2" class="mb-3">
             <h5 class="card-title">Lucía Ramírez</h5>
             <p class="card-text">Especialista en comedia</p>
@@ -126,6 +129,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="post">
+              <input type="hidden" name="update_id" id="update_id">
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="nombre_a" class="form-label">Nombre:</label>
@@ -148,4 +152,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<script>
+  const modal = document.getElementById('Actualizar');
+  modal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const actorId = button.getAttribute('data-actorid');
+    modal.querySelector('#update_id').value = actorId;
+  });
+
+  // No quería usar JS pero no quedaba de otra para envíar el id al modal con form sin usar un submit ni imprimir un modal para cada card
+  // Este eventlistener espera a que se despliegue el modal y luego envia el valor que almacena el atributo data-actorid del boton que haya activado el modal
+  //luego se selecciona el input con el id "update_id" y se le asigna como valor el id antes recogido.
+</script>
 </html>
