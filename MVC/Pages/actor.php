@@ -60,7 +60,7 @@
     <div class="row g-4" id="actoresList">
 
       <!-- Actor 1 -->
-      <div class="col-md-6 actor-card">
+      <!-- <div class="col-md-6 actor-card">
         <div class="card text-center">
           <div class="card-body">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Actor 1" class="mb-3">
@@ -69,16 +69,16 @@
             <a href="#" class="btn btn-warning">Contactar</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Actor 2 -->
-      <div class="col-md-6 actor-card">
+      <!-- <div class="col-md-6 actor-card">
         <div class="card text-center">
           <div class="card-body">
             <form action="" method="post">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-between"> -->
               <!-- Código prestado de los otros compañeros para activar un modal -->
-                <button class="btn btn-primary slide-btn" data-actorid="ACTOR_ID" data-bs-toggle="modal" data-bs-target="#Actualizar" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
+                <!-- <button class="btn btn-primary slide-btn" data-actorid="ACTOR_ID" data-bs-toggle="modal" data-bs-target="#Actualizar" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="button">Actualizar</button>
                 <input type="hidden" name="delete_id" value="ACTOR_ID">
                 <button class="btn btn-danger slide-btn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" type="submit">Eliminar</button>
               </div>
@@ -89,10 +89,13 @@
             <a href="#" class="btn btn-warning">Contactar</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <?php
-        $lol = "";
+        include("../conexion.php");
+          include("../Controladores/actorControlador.php");
+          $controlado = new actorControlado($conexion);
+          echo $controlado->actores();
       ?>
 
       <div class="modal fade" id="Actualizar" tabindex="-1">
