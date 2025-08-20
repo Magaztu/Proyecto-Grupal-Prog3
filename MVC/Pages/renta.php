@@ -103,6 +103,8 @@
               $fechaida = $_POST["fechaRenta"];
               $fecharegreso = $_POST["fechaDevolucion"];
               $alquilado = $_POST["devuelta"];
+              
+              $manage = $_SESSION['Manager'];
               if($alquilado = "on"){
                 $alquilado = 1;
               }
@@ -119,7 +121,7 @@
                 $fila = $consulta->fetch_assoc();
                 $customer_id = $fila["customer_id"];
                 $consulta->free();
-                $consulta = $conexion->query("INSERT INTO RENTAL(rental_date, inventory_id, customer_id, return_date, staff_id, alquilado) VALUES('$fechaida',$peli,'$customer_id','$fecharegreso',1,'$alquilado')");
+                $consulta = $conexion->query("INSERT INTO RENTAL(rental_date, inventory_id, customer_id, return_date, staff_id, alquilado) VALUES('$fechaida',$peli,'$customer_id','$fecharegreso',$manage,'$alquilado')");
               }
             }
             ?>

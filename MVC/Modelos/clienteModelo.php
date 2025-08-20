@@ -22,8 +22,8 @@
             return false;
           }
           else {
-            $devolver = $this->consulta->prepare("INSERT INTO customer(first_name, last_name, email,store_id,address_id) VALUES(?,?,?,1,10);");
-            $devolver->bind_param("sss",$nombre,$apellido,$correo);
+            $devolver = $this->consulta->prepare("INSERT INTO customer(first_name, last_name, email,store_id,address_id) VALUES(?,?,?,?,10);");
+            $devolver->bind_param("sssi",$nombre,$apellido,$correo,$_SESSION['Store']);
             $devolver->execute();
             $devolver->close();
             return true;

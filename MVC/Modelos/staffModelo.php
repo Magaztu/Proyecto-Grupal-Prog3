@@ -22,8 +22,8 @@
             return false;
           }
           else {
-            $devolver = $this->consulta->prepare("INSERT INTO staff(first_name, last_name, username, password, email, address_id, store_id) VALUES(?,?,?,?,?,9,1);");
-            $devolver->bind_param("sssss",$nombre,$apellido, $usuario, $contra, $correo);
+            $devolver = $this->consulta->prepare("INSERT INTO staff(first_name, last_name, username, password, email, address_id, store_id) VALUES(?,?,?,?,?,9,?);");
+            $devolver->bind_param("sssssi",$nombre,$apellido, $usuario, $contra, $correo, $_SESSION['Store']);
             $devolver->execute();
             $devolver->close();
             return true;
