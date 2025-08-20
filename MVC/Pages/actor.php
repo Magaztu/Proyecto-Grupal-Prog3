@@ -110,11 +110,11 @@
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="nombre_u" class="form-label">Nombre:</label>
-                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="nombre_a" name="nombre_a">
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="nombre_u" name="nombre_u">
                 </div>
                 <div class="mb-3">
                   <label for="apellido_u" class="form-label">Apellido:</label>
-                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="apellido_a" name="apellido_a">
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="apellido_u" name="apellido_u">
                 </div>
               </div>
               <div class="modal-footer">
@@ -154,16 +154,16 @@
   </div>
 
   <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
-  <div id="liveToast" class="toast align-items-center text-bg-primary border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
-    <div class="d-flex">
-      <div class="toast-body d-flex align-items-center gap-2">
-        <i class="bi bi-check-circle-fill fs-5"></i>
-        <span>Correo de contacto enviado con éxito.</span>
+    <div id="liveToast" class="toast align-items-center text-bg-primary border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <i class="bi bi-check-circle-fill fs-5"></i>
+          <span>Correo de contacto enviado con éxito.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
     </div>
   </div>
-</div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
