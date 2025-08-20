@@ -53,11 +53,14 @@
   </nav>
 
   <div class="container">
-    <h2 class="mb-4">Listado de Staff</h2>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+      <h2 class="mb-4">Listado de Staff</h2>
+      <button class="btn btn-success slide-btn-hor mb-4" data-bs-toggle="modal" data-bs-target="#Insertar" type="button">&nbsp;Añadir</button>
+    </div>
     <div class="row g-4" id="staffList">
 
       <!-- Staff 1 -->
-      <div class="col-12 staff-card">
+      <!-- <div class="col-12 staff-card">
         <div class="card text-center">
           <div class="card-body">
             <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Staff 1" class="mb-3">
@@ -66,27 +69,118 @@
             <a href="#" class="btn btn-warning">Contactar</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Staff 2 -->
-      <div class="col-12 staff-card">
+      <!-- <div class="col-12 staff-card">
         <div class="card text-center">
           <div class="card-body">
             <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Staff 2" class="mb-3">
             <h5 class="card-title">Sofía Torres</h5>
             <p class="card-text">Atención al cliente</p>
-            <a href="#" class="btn btn-warning">Contactar</a>
+            <a href="#" class="btn btn-warning">Correo</a>
+          </div>
+        </div>
+      </div> -->
+
+      <?php
+        include("../conexion.php");
+          include("../Controladores/staffControlador.php");
+          $controlado = new staffControlado($conexion);
+          echo $controlado->staff();
+      ?>
+
+      <div class="modal fade" id="Actualizar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Actualizar Staff</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+              <input type="hidden" name="update_id" id="update_id">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombre_u" class="form-label">Nombre:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="nombre_u" name="nombre_u">
+                </div>
+                <div class="mb-3">
+                  <label for="apellido_u" class="form-label">Apellido:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="apellido_u" name="apellido_u">
+                </div>
+                <div class="mb-3">
+                  <label for="usuario_u" class="form-label">Usuario:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="usuario_u" name="usuario_u">
+                </div>
+                <div class="mb-3">
+                  <label for="contra_u" class="form-label">Contraseña:</label>
+                  <input type="password" style="background-color:#FFFFFF; color:black" class="form-control" id="contra_u" name="contra_u">
+                </div>
+                <div class="mb-3">
+                  <label for="correo_u" class="form-label">Contraseña:</label>
+                  <input type="email" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_u" name="correo_u">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name="Actualizar" class="btn btn-primary">Actualizar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
 
-      <?php
-        $lol = "";
-      ?>
+      <div class="modal fade" id="Insertar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Añadir Staff</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombre_a" class="form-label">Nombre:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="nombre_a" name="nombre_a">
+                </div>
+                <div class="mb-3">
+                  <label for="apellido_a" class="form-label">Apellido:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="apellido_a" name="apellido_a">
+                </div>
+                <div class="mb-3">
+                  <label for="usuario_a" class="form-label">Usuario:</label>
+                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="usuario_a" name="usuario_a">
+                </div>
+                <div class="mb-3">
+                  <label for="contra_a" class="form-label">Contraseña:</label>
+                  <input type="password" style="background-color:#FFFFFF; color:black" class="form-control" id="contra_a" name="contra_a">
+                </div>
+                <div class="mb-3">
+                  <label for="correo_a" class="form-label">Contraseña:</label>
+                  <input type="email" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_a" name="correo_a">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name="Insertar" class="btn btn-success">Insertar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<script>
+  const modal = document.getElementById('Actualizar');
+  modal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const actorId = button.getAttribute('data-actorid');
+    modal.querySelector('#update_id').value = actorId;
+  });
+
+
+</script>
 </html>

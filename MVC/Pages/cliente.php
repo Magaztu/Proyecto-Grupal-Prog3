@@ -136,7 +136,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="correo_u" class="form-label">Correo Electrónico:</label>
-                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_u" name="correo_u">
+                  <input type="email" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_u" name="correo_u">
                 </div>
               </div>
               <div class="modal-footer">
@@ -166,7 +166,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="correo_a" class="form-label">Correo Electrónico:</label>
-                  <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_a" name="correo_a">
+                  <input type="email" style="background-color:#FFFFFF; color:black" class="form-control" id="correo_a" name="correo_a">
                 </div>
               </div>
               <div class="modal-footer">
