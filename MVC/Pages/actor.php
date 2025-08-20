@@ -106,18 +106,19 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="post">
+              <input type="hidden" name="update_id" id="update_id">
               <div class="modal-body">
                 <div class="mb-3">
-                  <label for="nombre_a" class="form-label">Nombre:</label>
+                  <label for="nombre_u" class="form-label">Nombre:</label>
                   <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="nombre_a" name="nombre_a">
                 </div>
                 <div class="mb-3">
-                  <label for="apellido_a" class="form-label">Apellido:</label>
+                  <label for="apellido_u" class="form-label">Apellido:</label>
                   <input type="text" style="background-color:#FFFFFF; color:black" class="form-control" id="apellido_a" name="apellido_a">
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" name="Actualizar" class="btn btn-primary">Actualizar</button>
               </div>
             </form>
           </div>
@@ -132,7 +133,6 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="post">
-              <input type="hidden" name="update_id" id="update_id">
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="nombre_a" class="form-label">Nombre:</label>
@@ -144,7 +144,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-success">Insertar</button>
+                <button type="submit" name="Insertar" class="btn btn-success">Insertar</button>
               </div>
             </form>
           </div>
@@ -152,6 +152,19 @@
       </div>
     </div>
   </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+  <div id="liveToast" class="toast align-items-center text-bg-primary border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div class="d-flex">
+      <div class="toast-body d-flex align-items-center gap-2">
+        <i class="bi bi-check-circle-fill fs-5"></i>
+        <span>Correo de contacto enviado con éxito.</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
@@ -167,5 +180,15 @@
   // No quería usar JS pero no quedaba de otra para envíar el id al modal con form sin usar un submit ni imprimir un modal para cada card
   // Este eventlistener espera a que se despliegue el modal y luego envia el valor que almacena el atributo data-actorid del boton que haya activado el modal
   //luego se selecciona el input con el id "update_id" y se le asigna como valor el id antes recogido.
+
+  document.querySelectorAll('.liveToastBtn').forEach(button => {
+    button.addEventListener('click', () => {
+      const toastEl = document.getElementById('liveToast');
+      const toast = bootstrap.Toast.getOrCreateInstance(toastEl);
+      toast.show();
+    });
+  });
+
+
 </script>
 </html>

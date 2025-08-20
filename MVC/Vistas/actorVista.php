@@ -1,7 +1,32 @@
 <?php
     class actorVisto{
-        function htmlActores($resultado){
-             $html = ""; //Este va a contener un bloque de código html para mandar a la vista
+        function htmlActores($resultado, $completado){
+
+            
+            $html = ""; //Este va a contener un bloque de código html para mandar a la vista
+            
+            if($completado == TRUE){
+                $html = $html . '
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="actorToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Transacción realizada con éxito...
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                const toastLive = document.getElementById("actorToast");
+                const toast = new bootstrap.Toast(toastLive);
+                toast.show();
+            });
+            </script>
+                ';
+            }
 
             while($fila = $resultado->fetch_assoc()){ //como un cursor, va bajando solo de indices y devuelve el valor de una fila, cuando se acaba da FALSO
   
@@ -33,7 +58,7 @@
                         <img src=" ' . $foto . ' " alt="Actor 2" class="mb-3">
                         <h5 class="card-title">' . $nombre_actor . '</h5>
                         <p class="card-text">Especialista en ' . $profesion . '</p>
-                        <a href="#" class="btn btn-warning">Contactar</a>
+                        <button type="button" class="btn btn-warning liveToastBtn">Contactar</button>
                     </div>
                     </div>
                 </div>
