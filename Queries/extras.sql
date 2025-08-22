@@ -205,3 +205,22 @@ drop procedure validacion_staff;
 
 --Nito alterar rental
 ALTER TABLE rental ADD COLUMN alquilado bool DEFAULT FALSE
+
+-- Ahora modifica el sp anterior
+delimiter $$
+CREATE PROCEDURE busqueda_titulo(in titulo_pelicula varchar(255))
+begin
+create view megasuperjoin_vw as select film.film_id, film.title, concat(film.length, ' minutos') as tiempo_total, category.name as categoria, film.description, rating, alquilado, inventory.inventory_id from film
+inner join inventory on inventory.film_id = film.film_id
+inner join rental on rental.inventory_id = inventory.inventory_id
+inner join film_category on film.film_id = film_category.film_id
+inner join category on film_category.category_id = category.category_id;
+
+select distinct * from megasuperjoin_vw
+where title like concat(titulo_pelicula, '%') LIMIT 16;
+
+drop view megasuperjoin_vw;
+
+end$$
+
+delimiter ;
