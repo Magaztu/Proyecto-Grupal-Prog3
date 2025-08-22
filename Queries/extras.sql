@@ -196,3 +196,12 @@ drop procedure validacion_staff;
 -- O IMPLEMENTAR ALQUILADO EN INVENTARIO Y USAR UN TRIGGER PARA ACTIVAR O DESACTIVAR CADA QUE SE DEVUELVE UNA PELICULA
 
 -- Boton para cambiar entre catalogo de pelis y todas las disponibles para alquilar
+
+
+
+
+
+-- Missing sql statement:
+
+--Nito alterar rental
+ALTER TABLE rental ADD COLUMN alquilado bool DEFAULT FALSE
