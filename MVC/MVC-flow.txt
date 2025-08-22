@@ -10,3 +10,8 @@ Will return a html variable that stores tags.
 
 PAGES:
 Is just the html / php that'll interact with the user.
+
+
+This project's done, so what's the roadmap now?
+-> Work to fix existing bugs and make this lil guy the best it can be.
+That includes fixing the soup of files I made during the last phases of development lol.
