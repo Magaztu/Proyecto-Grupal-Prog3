@@ -13,11 +13,16 @@ As of now,
     - Customers list.
     - Movies catalog.
     - Rental form.
+    - Actors list.
+    - Staff members list.
+    - Sessions (login as a staff member).
+    - CRUD for customers, staff members and actors.
+    - Select a store for receipt purposes.
 
 
 ### What's next to come?
 Web pages containing some form of access to:
 
-    - Other tables in the database.
-    - INSERT, DELETE AND UPDATE registers.
-    - Etc.
+    - Error corrections.
+    - INSERT, DELETE AND UPDATE registers for movies.
+    - Better implementation of the catalog alongside the inventory.
