@@ -16,5 +16,9 @@
             return $this->consulta->query("call busqueda_titulo('$buscar');");
           }
         }
+
+        /*
+        Should the CRUD be to MOVIES table or INVENTORY table.......?
+        */
     }
 ?>
